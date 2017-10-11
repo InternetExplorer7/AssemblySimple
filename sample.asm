@@ -1,4 +1,6 @@
 
+# Kaveh Khorram
+
 .data
     firstNumberPrompt:  .asciiz "Enter the first number"
     secondNumberPrompt: .asciiz "\nEnter the second number"
@@ -60,6 +62,11 @@ main:
     j PRINT_THEN_EXIT
     
     PRINT_THEN_EXIT:
+    # Print string
+    li $v0, 4
+    la $a0, result
+    syscall
+    # Print number
     li $v0, 1
     move $a0, $s0
     syscall
